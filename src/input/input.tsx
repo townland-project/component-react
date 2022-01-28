@@ -6,19 +6,22 @@ export const Input = (props: InputProps) => {
 
         delete _props.className
         delete _props.style
+        delete _props.prefix
+        delete _props.postfix
+        delete _props.label
 
         return (
             <input
                 value={props.value}
                 type={props.type || 'text'}
                 placeholder={props.placeholder}
-                {..._props}
+                {..._props as React.DetailedHTMLProps<React.InputHTMLAttributes<HTMLInputElement>, HTMLInputElement>}
             />
         )
     }
 
     return (
-        <div className={`tl-input-container ${props.className || ''}`}>
+        <div className={`tl-input-container ${props.className || ''} ${props.disabled ? 'disabled' : ''}`}>
             {
                 props.prefix ? <div className="tl-input-prefix">{props.prefix}</div> : <></>
             }
@@ -37,8 +40,14 @@ export const Input = (props: InputProps) => {
     )
 }
 
-export interface InputProps extends React.DetailedHTMLProps<React.InputHTMLAttributes<HTMLInputElement>, HTMLInputElement> {
-    label?: string
+interface _InputProps extends React.DetailedHTMLProps<React.InputHTMLAttributes<HTMLInputElement>, HTMLInputElement> {
     prefix?: any
     postfix?: any
+}
+
+export interface InputProps extends _InputProps {
+    label?: string
+    prefix?: JSX.Element
+    postfix?: JSX.Element
+    disabled?: boolean
 }

@@ -20,26 +20,37 @@ const Template: ComponentStory<typeof Radio> = (args) => <Radio {...args} />;
 
 export const Default = Template.bind({})
 export const Checked = Template.bind({})
+export const Disabled = Template.bind({})
+export const CheckedDisabled = Template.bind({})
 
 Default.args = {
     name: 'radio-button',
     children: 'To doing this',
     checked: false,
-    theme: 'primary'
+    theme: 'primary',
+    disabled: false
 } as RadioProps
 
 Checked.args = {
     name: 'radio-button',
     children: 'We\'ve done this',
     checked: true,
-    theme: 'secondary'
+    theme: 'secondary',
+    disabled: false
 } as RadioProps
 
-export const List = () => {
-    return (
-        <div className="flex flex-col">
-            <Radio name='gender'>Male</Radio>
-            <Radio name='gender'>Female</Radio>
-        </div>
-    )
-}
+Disabled.args = {
+    name: 'radio-button',
+    children: 'To doing this',
+    checked: false,
+    theme: 'primary',
+    disabled: true
+} as RadioProps
+
+CheckedDisabled.args = {
+    name: 'radio-button',
+    children: 'We\'ve done this',
+    checked: true,
+    theme: 'secondary',
+    disabled: true
+} as RadioProps

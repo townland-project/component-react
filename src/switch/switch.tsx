@@ -2,11 +2,12 @@ import React from "react"
 
 export const Switch = (props: SwitchProps) => {
     return (
-        <label className={`tl-switch tl-${props.theme || 'primary'}`}>
+        <label className={`tl-switch tl-${props.theme || 'primary'} ${props.disabled ? 'disabled' : ''}`}>
             <input
                 className='mr-[12px]'
                 type="checkbox"
-                defaultChecked={props.checked}
+                checked={props.checked}
+                disabled={props.checked}
                 onChange={props.onChange}
             />
             {props.children}
@@ -15,6 +16,7 @@ export const Switch = (props: SwitchProps) => {
 }
 
 export interface SwitchProps {
+    disabled?: boolean
     children?: JSX.Element | string
     checked?: boolean
     theme?: 'primary' | 'secondary'

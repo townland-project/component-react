@@ -33,37 +33,43 @@ export const LabeledPostfix = Template.bind({})
 
 Basic.args = {
     type: 'text',
-    placeholder: 'Placeholder'
+    placeholder: 'Placeholder',
+    disabled: false
 } as InputProps;
 
 BasicPrefix.args = {
     type: 'text',
     placeholder: 'Placeholder',
-    prefix: <Fix />
+    prefix: <Fix />,
+    disabled: false
 } as InputProps;
 
 BasicPostfix.args = {
     type: 'text',
     placeholder: 'Placeholder',
-    postfix: <Fix />
+    postfix: <Fix />,
+    disabled: false
 } as InputProps;
 
 Labeled.args = {
     label: 'Label',
     type: 'text',
-    placeholder: 'Placeholder'
+    placeholder: 'Placeholder',
+    disabled: false
 } as InputProps;
 
 LabeledPrefix.args = {
     label: 'Label',
     type: 'text',
     placeholder: 'Placeholder',
-    prefix: <Fix />
+    prefix: <Fix />,
+    disabled: false
 } as InputProps;
 
 LabeledPostfix.args = {
     label: 'Label',
     type: 'text',
     placeholder: 'Placeholder',
-    postfix: <Fix />
+    postfix: <Fix />,
+    disabled: false
 } as InputProps;

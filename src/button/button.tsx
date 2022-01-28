@@ -11,6 +11,7 @@ export const Button = (props: ButtonProps) => {
 
     return (
         <button
+            disabled={props.disabled}
             onClick={props.onClick}
             className={classNames.join(' ')}>
             {props.label}
@@ -19,6 +20,7 @@ export const Button = (props: ButtonProps) => {
 }
 
 export interface ButtonProps {
+    disabled?: boolean
     label: string
     styled?: 'outlined' | 'outlined:less' | 'flat'
     className?: string
