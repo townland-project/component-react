@@ -2,7 +2,7 @@
 
 import React, { useState } from 'react';
 
-import { ComponentStory, ComponentMeta } from '@storybook/react';
+import { ComponentMeta } from '@storybook/react';
 
 import { Tab, TabContainer, TabContainerProps, Tabs, TabContent } from './tabs';
 
@@ -15,14 +15,12 @@ export default {
     component: TabContainer,
 } as ComponentMeta<typeof TabContainer>;
 
-//👇 We create a “template” of how args map to rendering
-const Template: ComponentStory<typeof TabContainer> = (args) => <TabContainer {...args} />;
 
-const Container = () => {
+export const Basic = (props: TabContainerProps) => {
     let [tab, setTab] = useState<number>(1);
 
     return (
-        <>
+        <TabContainer position={props.position ?? 'top'} className='mt-12'>
             <TabContent className='h-[500px] w-[500px]'>
                 Tab #{tab}
             </TabContent>
@@ -38,14 +36,6 @@ const Container = () => {
                     </Tab>
                 )}
             </Tabs>
-        </>
+        </TabContainer>
     )
 }
-
-export const Basic = Template.bind({})
-
-Basic.args = {
-    position: 'top',
-    className: 'mt-12 inline-flex w-fit h-fit',
-    children: <Container />
-} as TabContainerProps
