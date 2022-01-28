@@ -1,2 +1,3 @@
 .storybook/
 src/
+lib/**/*.stories.js
