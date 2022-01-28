@@ -20,7 +20,7 @@ export const Input = (props: InputProps) => {
     return (
         <div className={`tl-input-container ${props.className || ''}`}>
             {
-                props.prefix ? <div className="tl-input-prefix"><props.prefix /></div> : <></>
+                props.prefix ? <div className="tl-input-prefix">{props.prefix}</div> : <></>
             }
             {
                 props.label ?
@@ -31,7 +31,7 @@ export const Input = (props: InputProps) => {
                     : _input()
             }
             {
-                props.postfix ? <div className="tl-input-postfix"><props.postfix /></div> : <></>
+                props.postfix ? <div className="tl-input-postfix">{props.postfix}</div> : <></>
             }
         </div>
     )
