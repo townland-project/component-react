@@ -46,6 +46,6 @@
     "typescript": "^4.5.5"
   },
   "dependencies": {
-    "@townland-project/tailwind-theme": "github:townland-project/tailwind-theme"
+    "@townland-project/tailwind-theme": "^0.0.2"
   }
 }
